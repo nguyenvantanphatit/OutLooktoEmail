@@ -1,9 +1,11 @@
 import nodemailer from "nodemailer";
+
 const Email = (options) => {
   let transpoter = nodemailer.createTransport({
-    host: "smtp-mail.outlook.com",
-    port: 587,
-    secure: false,
+    service: "gmail",
+    // host: "smtp-mail.outlook.com",
+    // port: 587,
+    // secure: false,
     auth: {
       user: process.env.EMAIL,
       pass: process.env.PASS,
@@ -15,19 +17,26 @@ const Email = (options) => {
       console.log(err);
       return;
     } else {
-      console.log("Send success");
+      console.log("Thanh Cong");
     }
   });
 };
 
 const EmailSender = ({ email, subject, message }) => {
   const options = {
-    from: process.env.EMAIL,
+    from: `Tan Phat`,
     to: email,
     subject: subject,
-    text: message,
+    html: ` 
+    <html>
+    <body>
+            <div>
+                <p>${message}</p>
+            </div>
+            </body>
+            </html>
+        `,
   };
-
   Email(options);
 };
 

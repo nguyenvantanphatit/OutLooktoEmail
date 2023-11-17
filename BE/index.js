@@ -4,7 +4,6 @@ import dotenv from "dotenv";
 import EmailSender from "./sendEmail.js";
 import serverless from "serverless-http";
 
-const router = express.Router();
 dotenv.config();
 
 const app = express();

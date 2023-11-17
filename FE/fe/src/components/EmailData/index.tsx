@@ -32,7 +32,7 @@ const EmailForm: React.FC = () => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <Row gutter={[20, 20]} style={{ margin: '200px 700px' }}>
+            <Row gutter={[20, 20]} style={{ textAlign: 'center', alignItems: 'center', justifyItems: 'center' }}>
                 <Col>
                     <h2>Send Email</h2>
                 </Col>
